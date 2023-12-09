@@ -9,7 +9,7 @@ Ensure that you have Docker, Minikube, and kubectl installed before running thes
 
 ## How to run the project
 ```
-git clone 
+git clone https://github.com/RohanVolety/MNIST-Flask.git
 
 cd MNIST
 
