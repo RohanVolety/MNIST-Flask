@@ -6,6 +6,18 @@ This is a Deep Learning project featuring the MNIST dataset. I have used a simpl
 
 Ensure that you have Docker, Minikube, and kubectl installed before running these commands
 
+## Create Virtual Environment
+Open a terminal and navigate to your project folder.
+Use the following command to create a virtual environment named venv:
+```
+python3 -m venv venv
+
+```
+Activate the Virtual Environment:
+```
+venv\Scripts\activate
+```
+
 
 ## How to run the project
 ```
