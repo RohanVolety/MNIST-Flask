@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>MNIST Image Prediction</title>
+
+  <style>
+    body {
+      text-align: center;
+      background-color: lightskyblue;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+    }
+
+
+
+    form {
+      display: inline-block;
+      text-align: left;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    button {
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+    img {
+      max-width: 400px;
+      max-height: 400px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>MNIST Image Prediction</h1>
+  <form action="/predict" method="post" enctype="multipart/form-data" id="uploadForm">
+    <input type="file" name="image" accept="image/png" onchange="previewImage()">
+    <br>
+    <button type="submit">Predict</button>
+  </form>
+
+  <div id="imagePreview"></div>
+
+  {% if prediction %}
+  <p>Prediction:
+    {{ prediction }}
+  </p>
+  {% endif %}
+
+  <script>
+    function previewImage() {
+      var preview = document.getElementById("imagePreview");
+      var fileInput = document.querySelector("input[type=file]");
+      var file = fileInput.files[0];
+
+      if (file) {
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+          var img = new Image();
+          img.src = e.target.result;
+          img.style.marginTop = "20px";
+          preview.innerHTML = "";
+          preview.appendChild(img);
+        };
+
+        reader.readAsDataURL(file);
+      }
+    }
+  </script>
+</body>
+
+</html>

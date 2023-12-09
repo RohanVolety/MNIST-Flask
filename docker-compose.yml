@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  mnist-classifier:
+    image: mnist-classifier:latest
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./model_2.h5:/app/model_2.h5
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_RUN_HOST=0.0.0.0
+
+  mysql:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=Rohan@123
+      - MYSQL_DATABASE=mnist
+    ports:
+      - "3306:3306"
