@@ -17,7 +17,11 @@ Activate the Virtual Environment:
 ```
 venv\Scripts\activate
 ```
+Install required Libraries
 
+```
+pip install -r requirements.txt
+```
 
 ## How to run the project
 ```
@@ -26,6 +30,8 @@ git clone https://github.com/RohanVolety/MNIST-Flask.git
 cd MNIST-FLASK
 
 ```
+
+
 ## Basic Configurations
 In ```app.py```, update the database configuration:
 ```
@@ -48,6 +54,7 @@ python app.py
 ```
 
 ## Using Docker 
+In ```app.py```, update the database configuration:
 
 Build and run the Docker container:
 
