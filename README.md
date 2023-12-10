@@ -23,7 +23,7 @@ venv\Scripts\activate
 ```
 git clone https://github.com/RohanVolety/MNIST-Flask.git
 
-cd MNIST
+cd MNIST-FLASK
 
 ```
 ## Basic Configurations
