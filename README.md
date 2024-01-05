@@ -65,21 +65,5 @@ docker-compose up
 
 ```
 
-## Using Kubernetes
 
-
-```
-- run minikube
-minikube start
-
-- Build our flask image
-docker build -t mnist-classifier .
-
-- Test flask image by running on localhost
-docker run -p 5000:5000 mnist-classifier
-
-- Deploy flask image
-kubectl apply -f deployment.yaml
-
-```
 
